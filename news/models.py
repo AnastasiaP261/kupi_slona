@@ -1,4 +1,5 @@
 from django.db import models
+from kupi_slona.models import Image
 
 
 class News(models.Model):
@@ -6,7 +7,7 @@ class News(models.Model):
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    photo = models.ImageField(upload_to='images/news/%Y/%m/')
+    photo = models.ManyToManyField(Image)
     is_published = models.BooleanField(default=True)
     author = models.CharField(max_length=20)
 
