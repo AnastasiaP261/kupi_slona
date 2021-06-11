@@ -3,13 +3,13 @@ from images.models import Images
 
 
 class News(models.Model):
-    title = models.CharField(max_length=30, verbose_name='Название')
+    title = models.CharField(max_length=100, verbose_name='Название')
     content = models.TextField(blank=True, verbose_name="Текст")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата последней редакции")
     photo = models.ManyToManyField(Images, verbose_name="Изображения")
     is_published = models.BooleanField(default=True, verbose_name="Статус")
-    author = models.CharField(max_length=20, verbose_name="Автор")
+    author = models.CharField(max_length=30, verbose_name="Автор")
 
     def __str__(self):
         return self.title
