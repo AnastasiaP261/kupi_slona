@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.3.10, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.3.10, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="../../../static/assets/images/logo-121x117.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Home</title>
+
+  <link rel="stylesheet" href="../../../static/assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="../../../static/assets/tether/tether.min.css">
+  <link rel="stylesheet" href="../../../static/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../static/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../../../static/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="../../../static/assets/animatecss/animate.css">
+  <link rel="stylesheet" href="../../../static/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="../../../static/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="../../../static/assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900&display=swap"></noscript>
+  <link rel="preload" as="style" href="../../../static/assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="../../../static/assets/mobirise/css/mbr-additional.css" type="text/css">
+
+</head>
+<body>
+  
+  <section class="menu cid-s48OLK6784" once="menu" id="menu1-h">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mobiri.se">
+                        <img src="../../../static/assets/images/logo-121x117.png" alt="Mobirise" style="height: 8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-1" href="https://mobiri.se">КУПИ <br>СЛОНА</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="../../../kupi_slona_site/page3.html#top">КУПИТЬ СЛОНА</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="blog.html#top">БЛОГ</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="../../../kupi_slona_site/page2.html#top">О НАС</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobirise.com"><span class="mobi-mbri mobi-mbri-cart-full mbr-iconfont mbr-iconfont-btn"></span></a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobirise.com"><span class="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span></a></li></ul>
+                
+                
+            </div>
+        </div>
+    </nav>
+
+</section>
+
+<section class="content1 cid-sA19pMOpEF" id="content1-l">
+    
+    
+    <div class="container">
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Блог</strong></h4>
+            <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Здесь вы можете прочесть новости о нас и о слонах</h5>
+        </div>
+
+        {% for item, i in content %}
+        {% if i %}
+            <div class="row mt-4">
+            <div class="item features-image сol-12 col-md-6 col-lg-6 active">
+        {% endif %}
+        {% if not i %}
+            <div class="item features-image сol-12 col-md-6 col-lg-6">
+        {% endif %}
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="../../../{{ item.photo.all.0.image }}" alt="" title="" data-slide-to="0">
+                    </div>
+                    <div class="item-content">
+                        <h5 class="item-title mbr-fonts-style display-5"><a href="../../../kupi_slona_site/page1.html#top" class="text-primary" target="_blank"><strong>{{ item.title }}</strong></a></h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Ann
+                                Brown</strong><em>  {{ item.updated_at }}</em></h6>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7" style=""><a href="../../../kupi_slona_site/page1.html#top" class="text-primary" target="_blank">Read more..</a><br></p>
+                    </div>
+                    
+                </div>
+        {% if i %}
+            </div>
+        {% endif %}
+        {% if not i %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</section>
+
+<section class="footer3 cid-s48P1Icc8J" once="footers" id="footer3-i">
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+                <ul class="foot-menu">
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="https://mobirise.com/help/" class="text-success">Help Center</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="http://forums.mobirise.com/" class="text-success">Mobirise Forums</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="https://mobirise.com/" class="text-success">Mobirise.com</a></li></ul>
+            </div>
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                    © Copyright 2020 Mobirise. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/x" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://mobirise.site/t" style="color:#aaa;">Created</a> with Mobirise website template</p></section><script src="../../../static/assets/web/assets/jquery/jquery.min.js"></script>  <script src="../../../static/assets/popper/popper.min.js"></script>  <script src="../../../static/assets/tether/tether.min.js"></script>  <script src="../../../static/assets/bootstrap/js/bootstrap.min.js"></script>  <script src="../../../static/assets/smoothscroll/smooth-scroll.js"></script>  <script src="../../../static/assets/viewportchecker/jquery.viewportchecker.js"></script>  <script src="../../../static/assets/dropdown/js/nav-dropdown.js"></script>  <script src="../../../static/assets/dropdown/js/navbar-dropdown.js"></script>  <script src="../../../static/assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="../../../static/assets/theme/js/script.js"></script>
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
