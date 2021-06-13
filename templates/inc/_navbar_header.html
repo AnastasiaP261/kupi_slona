@@ -1,0 +1,31 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'blog' %}">
+                <img src="../../../static/assets/brand/logo-121x117.png" alt="" width="60"
+                     class="d-inline-block">
+                КУПИ СЛОНА
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar navbar-expand-lg" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link {% if active_link == "blog" %} active {% endif %}" aria-current="page" href="{% url 'blog' %}">БЛОГ</a>
+                <a class="nav-link {% if active_link == "shop" %} active {% endif %}" href="#">КУПИ СЛОНА</a>
+                <a class="nav-link {% if active_link == "about" %} active {% endif %}" href="#">О НАС</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false"></a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">КОРЗИНА</a></li>
+                        <li><a class="dropdown-item" href="#">МОЙ ПРОФИЛЬ</a></li>
+                        <li><a class="dropdown-item" href="#">СТАТИСТИКА АККАУНТА</a></li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+</nav>
