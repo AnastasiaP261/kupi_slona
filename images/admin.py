@@ -1,8 +1,7 @@
 from django.contrib import admin
 from images.models import Images
-from PIL import Image as PImage, ImageDraw
-from io import StringIO
-from kupi_slona.settings import BASE_DIR, STATIC_URL, MEDIA_URL
+from PIL import Image as PImage
+from kupi_slona.settings import STATIC_URL, MEDIA_URL
 import os
 
 
@@ -24,10 +23,7 @@ class ImagesAdmin(admin.ModelAdmin):
         empty_list.save(fp=path, format=img.format)
         new_im = Images(title=obj.title, image=obj.image.name)
 
-        print(obj.image)
-        obj = new_im
-        print(obj.image)
-        return super().save_model(request, obj, form, change)
+        return super().save_model(request, new_im, form, change)
 
 
 admin.site.register(Images, ImagesAdmin)
