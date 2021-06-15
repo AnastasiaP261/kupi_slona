@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from images.models import Images
 
 
@@ -18,3 +19,6 @@ class News(models.Model):
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
         ordering = ['-updated_at']
+
+    def get_absolute_url(self):
+        return reverse('article', kwargs={'article_id': self.pk})

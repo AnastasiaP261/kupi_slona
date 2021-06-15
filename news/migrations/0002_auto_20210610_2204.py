@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='news',
             name='photo',
-            field=models.ManyToManyField(to='images.Images'),
+            field=models.ManyToManyField(to='images.Media'),
         ),
     ]
