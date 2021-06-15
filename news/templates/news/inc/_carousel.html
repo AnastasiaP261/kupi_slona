@@ -10,7 +10,7 @@
         <div class="carousel-inner">
             {% for im in news_item.photo.all %}
             <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                <img src="../../../static/images/{{ im.image }}" class="d-block w-100" alt="...">
+                <img src="/images/{{ im.image }}" class="d-block w-100" alt="...">
             </div>
         {% endfor %}
         </div>
