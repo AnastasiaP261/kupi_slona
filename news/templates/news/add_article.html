@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Добавить статью{% endblock %}
+
+{% block heading %}<br>Добавление статьи:{% endblock %}
+
+{% block content %}
+    <form action="{% url 'add_article' %}" method="post">
+        {% csrf_token %}
+
+        {{ form_news.non_field.errors }}
+        <div class="mb-3">
+            <label for="{{ form_news.title.id_for_label }}" class="form_news-label">Название статьи:</label>
+            {{ form_news.title }}
+            <div class="invalid-feedback">
+                {{ form_news.title.errors }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form_news.content.id_for_label }}" class="form_news-label">Текст статьи:</label>
+            {{ form_news.content }}
+            <div class="invalid-feedback">
+                {{ form_news.content.errors }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form_news.photo.id_for_label }}" class="form_news-label">Вы можете прикрепить уже загруженные
+                изображения или <a href="{% url 'add_image' %}">загрузить новые</a>:</label>
+            {{ form_news.photo }}
+            <div class="invalid-feedback">
+                {{ form_news.photo.errors }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form_news.is_published.id_for_label }}" class="form_news-label">Опубликовано:</label>
+            {{ form_news.is_published }}
+            <div class="invalid-feedback">
+                {{ form_news.is_published.errors }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form_news.author.id_for_label }}" class="form_news-label">Автор:</label>
+            {{ form_news.author }}
+            <div class="invalid-feedback">
+                {{ form_news.author.errors }}
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Добавить</button>
+    </form>
+    <br>
+    <br>
+{% endblock %}

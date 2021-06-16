@@ -5,6 +5,8 @@
 {% block heading %}Блог о нас и о слонах{% endblock %}
 
 {% block content %}
+    <a href="{% url 'add_article' %}">Добавить новую статью</a> <br> <br>
+
         <div class="row">
             {% for item in news %}
                 {% cycle True False as row silent %}
