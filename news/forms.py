@@ -8,9 +8,10 @@ class NewsForm(forms.Form):
                             widget=forms.TextInput(attrs={'class': 'form-control'}))
     content = forms.CharField(label='Текст статьи:',
                               widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 10}))
-    photo = forms.ModelMultipleChoiceField(queryset=Images.objects.all(),
-                                           label='Прикрепить уже загруженные изображения:',
-                                           widget=forms.SelectMultiple(attrs={'class': 'form-control'}))
+    # photo = forms.ModelMultipleChoiceField(queryset=Images.objects.all(),
+    #                                        label='Прикрепить уже загруженные изображения:',
+    #                                        required=False,
+    #                                        widget=forms.SelectMultiple(attrs={'class': 'form-control'}))
     is_published = forms.BooleanField(initial=True,
                                       label='Опубликовано:')
     author = forms.CharField(max_length=30,
