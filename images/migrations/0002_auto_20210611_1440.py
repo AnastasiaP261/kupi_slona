@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('images', '0001_initial'),
     ]
 
     operations = [

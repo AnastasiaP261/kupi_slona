@@ -8,7 +8,7 @@ class News(models.Model):
     content = models.TextField(blank=True, verbose_name="Текст")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата последней редакции")
-    photo = models.ManyToManyField(Images, verbose_name="Изображения")
+    photo = models.ManyToManyField(Images, verbose_name="Изображения", blank=True)
     is_published = models.BooleanField(default=True, verbose_name="Статус")
     author = models.CharField(max_length=30, verbose_name="Автор")
 
