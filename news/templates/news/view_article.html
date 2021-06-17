@@ -5,7 +5,12 @@
 {% block heading %}Статья: "{{ news_item.title }}"{% endblock %}
 
 {% block content %}
-    {% include 'inc/_carousel.html' %}
+    {{ news_item.photo.images }}
+    {% if news_item.photo.all %}
+        {% include 'inc/_carousel.html' %}
+    {% else %}
+        <img src="/images/brand/default_picture.png" class="d-block w-100" alt="...">
+    {% endif %}
 
     {{ news_item.content| linebreaks }}
 {% endblock %}

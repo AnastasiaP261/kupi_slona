@@ -31,10 +31,10 @@ class NewsForm(forms.ModelForm):
     #                          label='Автор:',
     #                          widget=forms.TextInput(attrs={'class': 'form-control'}))
 
-    def clean_title(self):
-        title = self.cleaned_data['title']
-        if re.match(r'^[a-zA-Zа-яА-Я 0-9,./\-+*!?\\_"\']+$', title):
-            raise ValidationError('''В названии могут присутствовать только латиница, 
-            кириллица, цифры, пробел и знаки ,./\\!?_"\'-+*''')
-        return title
+    # def clean_title(self):
+    #     title = self.cleaned_data['title']
+    #     if re.match(r'^[a-zA-Zа-яА-Я 0-9,./\-+*!?\\_"\']+$', title):
+    #         raise ValidationError('''В названии могут присутствовать только латиница,
+    #         кириллица, цифры, пробел и знаки ,./\\!?_"\'-+*''')
+    #     return title
 

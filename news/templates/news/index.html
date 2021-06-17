@@ -7,25 +7,29 @@
 {% block content %}
     <a href="{% url 'add_article' %}">Добавить новую статью</a> <br> <br>
 
-        <div class="row">
-            {% for item in news %}
-                {% cycle True False as row silent %}
-                {% if row %}
-                <div class="col-lg-6">
-                {% endif %}
-                    <div class="card" style="width: 30rem;">
-                        <img src="/images/{{ item.photo.all.0.image }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ item.title }}</h5>
-                            <p class="card-text">{{ item.content|truncatewords:20 }}</p>
-                            <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Читать еще...</a>
-                        </div>
-                        <div class="card-footer text-muted"> Опубликовано {{ item.created_at|timesince }} назад
-                        </div>
-                    </div>
+    <div class="row">
+        {% for item in news %}
+            {% cycle True False as row silent %}
             {% if row %}
-                </div>
+                <div class="col-lg-6">
             {% endif %}
-            {% endfor %}
+        <div class="card" style="width: 30rem;">
+            {% if item.photo.all %}
+                <img src="/images/{{ item.photo.all.0.image }}" class="card-img-top" alt="...">
+            {% else %}
+                <img src="/images/brand/default_picture.png" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.content|truncatewords:20 }}</p>
+                <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Читать еще...</a>
+            </div>
+            <div class="card-footer text-muted"> Опубликовано {{ item.created_at|timesince }} назад
+            </div>
         </div>
+        {% if row %}
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}
