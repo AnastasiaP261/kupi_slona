@@ -19,7 +19,7 @@ def add_article(request):
     if request.method == 'POST':
         form = NewsForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
+            # print(form.cleaned_data)
             # new_obj = form.save(commit=False)
             # new_obj.user = request.user
             # new_obj.save()
@@ -37,7 +37,8 @@ def add_article(request):
             # news.save()
             # news.photo.set(form.cleaned_data['photo'])
 
-            news = News.objects.create(**form.cleaned_data)
+            # news = News.objects.create(**form.cleaned_data) # для формы не связанной с моделью
+            news = form.save()
             return redirect(news)
     else:
         form = NewsForm()
