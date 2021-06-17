@@ -1,6 +1,8 @@
 from django import forms
 from images.models import Images
 from .models import News
+import re
+from django.core.exceptions import ValidationError
 
 
 class NewsForm(forms.ModelForm):
@@ -28,3 +30,11 @@ class NewsForm(forms.ModelForm):
     # author = forms.CharField(max_length=30,
     #                          label='Автор:',
     #                          widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+    def clean_title(self):
+        title = self.cleaned_data['title']
+        if re.match(r'^[a-zA-Zа-яА-Я 0-9,./\-+*!?\\_"\']+$', title):
+            raise ValidationError('''В названии могут присутствовать только латиница, 
+            кириллица, цифры, пробел и знаки ,./\\!?_"\'-+*''')
+        return title
+
