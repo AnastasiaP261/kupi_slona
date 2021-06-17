@@ -1,12 +1,27 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView
 from .models import News
 from .forms import NewsForm
 from images.forms import ImagesForm
 
 
-def index(request):
-    news = News.objects.all()[:8]       # получение последних 8 новостей
-    return render(request, 'news/index.html', {'news': news, 'active_link': 'blog'})
+class HomeNews(ListView):
+    model = News
+    template_name = 'news/blog.html'
+    context_object_name = 'news'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(HomeNews, self).get_context_data(**kwargs)
+        # context['title'] = 'Блог'
+        return context
+
+    def get_queryset(self):
+        return News.objects.filter(is_published=True)
+
+
+# def index(request):
+#     news = News.objects.all()[:8]       # получение последних 8 новостей
+#     return render(request, 'news/blog.html', {'news': news, 'active_link': 'blog'})
 
 
 def get_article(request, article_id):
