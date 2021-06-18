@@ -10,8 +10,6 @@ class AddImage(CreateView):
     template_name = 'images/add_image.html'
     success_url = reverse_lazy('add_image')
 
-
-
 # def add_image(request):
 #     if request.method == 'POST':
 #         form_img = ImagesForm(request.POST)
