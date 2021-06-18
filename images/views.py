@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 class AddImage(CreateView):
     form_class = ImagesForm
     template_name = 'images/add_image.html'
-    success_url = reverse_lazy('blog')
+    success_url = reverse_lazy('add_image')
 
 
 
