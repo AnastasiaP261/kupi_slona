@@ -5,49 +5,46 @@
 {% block heading %}<br>Добавление статьи:{% endblock %}
 
 {% block content %}
+    {% if form.non_field_errors %}
+        <div class="non-field-errors">
+            {% for err in form.non_field_errors %}
+                {{ err.as_text }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <form action="{% url 'add_article' %}" method="post">
         {% csrf_token %}
 
-        {{ form_news.non_field.errors }}
         <div class="mb-3">
-            <label for="{{ form_news.title.id_for_label }}">Название статьи:</label>
-            {{ form_news.title }}
-            <div class="invalid-feedback">
-                {{ form_news.title.errors }}
-            </div>
+            <label for="{{ form.title.id_for_label }}">Название статьи:</label>
+            {{ form.title }}
+            {{ form.title.errors }}
         </div>
 
         <div class="mb-3">
-            <label for="{{ form_news.content.id_for_label }}">Текст статьи:</label>
-            {{ form_news.content }}
-            <div class="invalid-feedback">
-                {{ form_news.content.errors }}
-            </div>
+            <label for="{{ form.content.id_for_label }}">Текст статьи:</label>
+            {{ form.content }}
+            {{ form.content.errors }}
         </div>
 
         <div class="mb-3">
-            <label for="{{ form_news.photo.id_for_label }}">Вы можете прикрепить уже загруженные
+            <label for="{{ form.photo.id_for_label }}">Вы можете прикрепить уже загруженные
                 изображения или <a href="{% url 'add_image' %}">загрузить новые</a>:</label>
-            {{ form_news.photo }}
-            <div class="invalid-feedback">
-                {{ form_news.photo.errors }}
-            </div>
+            {{ form.photo }}
+            {{ form.photo.errors }}
         </div>
 
         <div class="mb-3">
-            <label for="{{ form_news.is_published.id_for_label }}">Опубликовано:</label>
-            {{ form_news.is_published }}
-            <div class="invalid-feedback">
-                {{ form_news.is_published.errors }}
-            </div>
+            <label for="{{ form.is_published.id_for_label }}">Опубликовано:</label>
+            {{ form.is_published }}
+            {{ form.is_published.errors }}
         </div>
 
         <div class="mb-3">
-            <label for="{{ form_news.author.id_for_label }}">Автор:</label>
-            {{ form_news.author }}
-            <div class="invalid-feedback">
-                {{ form_news.author.errors }}
-            </div>
+            <label for="{{ form.author.id_for_label }}">Автор:</label>
+            {{ form.author }}
+            {{ form.author.errors }}
         </div>
 
         <button type="submit" class="btn btn-primary btn-block">Добавить</button>

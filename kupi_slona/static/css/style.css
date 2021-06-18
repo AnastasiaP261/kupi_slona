@@ -2,6 +2,7 @@ body {
     background: #c5dfc5;
 }
 
-.errorlist {
+.errorlist .invalid-feedback {
     color: darkred;
 }
+
