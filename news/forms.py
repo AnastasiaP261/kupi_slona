@@ -12,8 +12,8 @@ class NewsForm(forms.ModelForm):
         fields = ['title', 'photo', 'content', 'is_published', 'author']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'photo': forms.SelectMultiple(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 10}),
+            'photo': forms.SelectMultiple(attrs={'class': 'form-select', 'size': '6'}),
+            'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 12}),
             'author': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
@@ -38,4 +38,8 @@ class NewsForm(forms.ModelForm):
             raise ValidationError('''В названии могут присутствовать только латиница,
             кириллица, цифры, символы пунктуации и знак пробела.''')
         return title
+
+
+
+
 

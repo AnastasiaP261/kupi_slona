@@ -23,16 +23,16 @@
         </div>
 
         <div class="mb-3">
-            <label for="{{ form.content.id_for_label }}">Текст статьи:</label>
-            {{ form.content }}
-            {{ form.content.errors }}
-        </div>
-
-        <div class="mb-3">
             <label for="{{ form.photo.id_for_label }}">Вы можете прикрепить уже загруженные
                 изображения или <a href="{% url 'add_image' %}">загрузить новые</a>:</label>
             {{ form.photo }}
             {{ form.photo.errors }}
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form.content.id_for_label }}">Текст статьи:</label>
+            {{ form.content }}
+            {{ form.content.errors }}
         </div>
 
         <div class="mb-3">

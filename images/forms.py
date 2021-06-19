@@ -13,6 +13,7 @@ class ImagesForm(forms.ModelForm):
 
 
 
+
 # class ImagesForm(forms.Form):
 #     title = forms.CharField(max_length=30, label='Название изображения:',
 #                             widget=forms.TextInput(attrs={'class': 'form-control'}))
