@@ -7,21 +7,21 @@ body {
 }
 
 .lightbox-gallery {
-    background-image: linear-gradient(#4A148C, #E53935);
+    /*background-image: linear-gradient(#4A148C, #E53935);*/
     background-repeat: no-repeat;
-    color: #000;
+    /*color: #000;*/
     overflow-x: hidden
 }
 
 .lightbox-gallery p {
-    color: #fff
+    /*color: #000000*/
 }
 
 .lightbox-gallery h2 {
     font-weight: bold;
     margin-bottom: 40px;
     padding-top: 40px;
-    color: #fff
+    /*color: #000000*/
 }
 
 @media (max-width:767px) {

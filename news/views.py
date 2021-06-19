@@ -18,7 +18,7 @@ class HomeNews(ListView):
         # print(context)
         return context
 
-    def get_queryset(self):
+    def get_queryset(self):           # чтобы публиковались не все новости а только те, которые должны быть опубликованы
         return News.objects.filter(is_published=True)[:8]
 
 # def index(request):

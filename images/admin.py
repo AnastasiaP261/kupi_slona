@@ -9,8 +9,7 @@ class ImagesAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'image')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
-
-    # def save_model1(self, request, obj, form, change):
+    # def save_model(self, request, obj, form, change):
     #     img = PImage.open(obj.image)
     #     max_size = (1300, 750)
     #     empty_list = PImage.new('RGB', max_size, 'white')

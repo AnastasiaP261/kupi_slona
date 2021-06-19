@@ -1,12 +1,13 @@
 from django.db import models
-from django.utils.html import mark_safe, format_html
+from django.utils.html import format_html
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFit
+from django.urls import reverse_lazy
 
 
 class Images(models.Model):
     title = models.CharField(max_length=30, verbose_name='Имя')
-    # image = ProcessedImageField(verbose_name="Расположение")
+    # image = models.ImageField(verbose_name="Расположение")
     image = ProcessedImageField(processors=[ResizeToFit(
                                                             width=1300,
                                                             height=750,
@@ -18,13 +19,16 @@ class Images(models.Model):
     def __str__(self):
         return self.title
 
-    def get_thumbnail(self):
-        _str = f""" <img src="/images/{self.image}" class="img-thumbnail" alt="..."> """
-        print(_str)
-        return format_html('<img src="/images/{}" class="img-thumbnail" alt="...">', self.image,)
+    # def get_thumbnail(self):
+    #     img = self.image
+    #
+    #     return format_html('<img src="/images/{}" class="img-thumbnail" alt="...">', img,)
 
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = "Изображения"
         ordering = ['title', 'id']
+
+    def get_absolute_url(self):
+        return reverse_lazy('view_image', kwargs={'pk': self.pk})
 

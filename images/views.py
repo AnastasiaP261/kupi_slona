@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 from images.models import Images
 from .forms import ImagesForm
 from django.urls import reverse_lazy
 from imagekit.processors import ResizeToFit
+
+
+class ImageView(DetailView):
+    model = Images
+    context_object_name = 'img'
 
 
 class AddImage(CreateView):
@@ -14,18 +19,6 @@ class AddImage(CreateView):
     def get_context_data(self, **kwargs):
         kwargs['object_list'] = Images.objects.all()
         return super(AddImage, self).get_context_data(**kwargs)
-
-    def post(self, request, *args, **kwargs):
-        # print('post')
-        # print(request)
-        # form = ImagesForm(request.POST)
-        # image = request.FILES['image']
-        # if form.is_valid():
-        #     pass
-        #
-        #
-
-        return super(AddImage, self).post(request, *args, **kwargs)
 
 
 # def add_image(request):
